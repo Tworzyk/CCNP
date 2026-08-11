@@ -24,7 +24,6 @@ affects the best-path selection process.
 - BGP
 - iBGP
 - eBGP
-- BGP Weight
 - Loopback interfaces
 - IPv4
 - GNS3
@@ -33,17 +32,19 @@ affects the best-path selection process.
 
 | Router | AS | Loopback |
 |--------|----|----------|
-| R17 | 65681 | 1.1.1.1/24 |
-| R20 | 65666 | 4.4.4.4/24 |
-| R21 | 65112 | - |
+| R17 | 65681 | 1.1.1.1/32 |
+| R18 | 65681 | 2.2.2.2/32 |
+| R19 | 65681 | 3.3.3.3/32 |
+| R20 | 65666 | 4.4.4.4/32 |
+| R21 | 65112 | 5.5.5.5/32 |
 
 ## Lab Objectives
-
-1. Configure iBGP inside AS65681.
-2. Configure eBGP connections to AS65666 and AS65112.
-3. Advertise networks using BGP.
-4. Modify the Weight attribute.
-5. Verify how Weight influences BGP best-path selection.
+1. Configure OSPF inside AS65681 to provide connectivity to Loopback's
+2. Configure iBGP inside AS65681.
+3. Configure eBGP connections to AS65666 and AS65112.
+4. Advertise networks using BGP.
+5. Modify the Weight attribute.
+6. Verify how Weight influences BGP best-path selection.
 
 ## Verification
 
@@ -53,7 +54,7 @@ Useful commands:
     show ip bgp
     show ip route bgp
     show ip bgp <prefix>
-    traceroute <destination>
+    traceroute <destination> <source>
 
 ## Key Findings
 
