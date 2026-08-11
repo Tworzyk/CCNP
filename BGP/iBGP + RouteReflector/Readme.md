@@ -16,7 +16,7 @@ affects the best-path selection process.
 
 ## Topology
 
-![BGP topology](topology/bgp-route-reflector-topology.png)
+![BGP topology](Topology/bgp-route-reflector-topology.png)
 
 ## Technologies
 
