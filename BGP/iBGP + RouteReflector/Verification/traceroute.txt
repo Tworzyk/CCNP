@@ -1,0 +1,18 @@
+R5#traceroute 4.4.4.4 source 5.5.5.5
+Type escape sequence to abort.
+Tracing the route to 4.4.4.4
+VRF info: (vrf in name/id, vrf out name/id)
+  1 172.16.12.1 11 msec 5 msec 6 msec
+  2 172.16.10.1 11 msec 5 msec 10 msec
+  3 172.16.8.1 12 msec 10 msec 9 msec
+  4 172.16.6.1 19 msec 15 msec 18 msec
+
+R4#traceroute 5.5.5.5 source 4.4.4.4
+Type escape sequence to abort.
+Tracing the route to 5.5.5.5
+VRF info: (vrf in name/id, vrf out name/id)
+  1 172.16.6.2 10 msec 6 msec 4 msec
+  2 172.16.8.2 6 msec 8 msec 6 msec
+  3 172.16.10.2 9 msec 10 msec 8 msec
+  4 172.16.12.2 10 msec 12 msec 13 msec
+R4#

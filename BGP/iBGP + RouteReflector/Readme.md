@@ -1,0 +1,69 @@
+# Cisco BGP Weight Lab
+
+## Overview
+
+This lab demonstrates BGP path selection using the Cisco-specific
+Weight attribute.
+
+The topology consists of three autonomous systems:
+
+- AS65681 – internal BGP network
+- AS65666 – external BGP neighbor
+- AS65112 – external BGP neighbor
+
+The main goal of the lab was to observe how the BGP Weight attribute
+affects the best-path selection process.
+
+## Topology
+
+![BGP topology](topology/bgp-weight-topology.png)
+
+## Technologies
+
+- Cisco IOS
+- BGP
+- iBGP
+- eBGP
+- BGP Weight
+- Loopback interfaces
+- IPv4
+- GNS3
+
+## Addressing
+
+| Router | AS | Loopback |
+|--------|----|----------|
+| R17 | 65681 | 1.1.1.1/24 |
+| R20 | 65666 | 4.4.4.4/24 |
+| R21 | 65112 | - |
+
+## Lab Objectives
+
+1. Configure iBGP inside AS65681.
+2. Configure eBGP connections to AS65666 and AS65112.
+3. Advertise networks using BGP.
+4. Modify the Weight attribute.
+5. Verify how Weight influences BGP best-path selection.
+
+## Verification
+
+Useful commands:
+
+    show ip bgp summary
+    show ip bgp
+    show ip route bgp
+    show ip bgp <prefix>
+    traceroute <destination>
+
+## Key Findings
+
+Cisco Weight is a locally significant BGP attribute.
+
+A route with a higher Weight value is preferred over a route with
+a lower Weight value.
+
+The Weight attribute is not advertised to other BGP routers.
+
+## Configuration
+
+Router configurations are available in the `configs/` directory.
