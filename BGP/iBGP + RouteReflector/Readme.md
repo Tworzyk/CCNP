@@ -1,4 +1,4 @@
-# Cisco BGP Weight Lab
+# Cisco BGP Route-Reflector Lab
 
 ## Overview
 
@@ -58,12 +58,11 @@ Useful commands:
 
 ## Key Findings
 
-Cisco Weight is a locally significant BGP attribute.
+A Route Reflector (RR) is used in iBGP to reduce the need for a full-mesh topology between all BGP routers.
 
-A route with a higher Weight value is preferred over a route with
-a lower Weight value.
+The Route Reflector can advertise routes learned from one iBGP client to other iBGP clients, bypassing the standard iBGP split-horizon rule.
 
-The Weight attribute is not advertised to other BGP routers.
+Using a Route Reflector significantly reduces the number of required iBGP sessions and improves scalability in larger networks.
 
 ## Configuration
 
