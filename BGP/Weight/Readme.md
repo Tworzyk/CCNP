@@ -7,23 +7,21 @@ Weight attribute.
 
 The topology consists of three autonomous systems:
 
-- AS65681 – internal BGP network
-- AS65666 – external BGP neighbor
-- AS65112 – external BGP neighbor
+- AS65111 – R30
+- AS65222 – R32
+- AS65333 – R29
 
 The main goal of the lab was to observe how the BGP Weight attribute
 affects the best-path selection process.
 
 ## Topology
 
-![BGP topology](Topology/bgp-route-reflector-topology.png)
+![BGP topology](Topology/bgp-weight.png)
 
 ## Technologies
 
 - Cisco IOS
 - BGP
-- iBGP
-- eBGP
 - Loopback interfaces
 - IPv4
 - GNS3
@@ -32,19 +30,21 @@ affects the best-path selection process.
 
 | Router | AS | Loopback |
 |--------|----|----------|
-| R17 | 65681 | 1.1.1.1/32 |
-| R18 | 65681 | 2.2.2.2/32 |
-| R19 | 65681 | 3.3.3.3/32 |
-| R20 | 65666 | 4.4.4.4/32 |
-| R21 | 65112 | 5.5.5.5/32 |
+| R30 | 65681 | 10.10.10.10/24 |
+| R32 | 65681 | 10.10.10.10/24 |
+
 
 ## Lab Objectives
-1. Configure OSPF inside AS65681 to provide connectivity to Loopback's
-2. Configure iBGP inside AS65681.
-3. Configure eBGP connections to AS65666 and AS65112.
-4. Advertise networks using BGP.
-5. Modify the Weight attribute.
-6. Verify how Weight influences BGP best-path selection.
+1. Weight is a Cisco-specific BGP attribute.
+2. Weight is significant only on the local router.
+3. Weight is not advertised to BGP neighbors.
+4. The path with the highest Weight is preferred.
+5. Routes learned from a BGP neighbor have a default Weight of 0.
+6. Locally originated routes have a default Weight of 32768.
+
+
+
+
 
 ## Verification
 
