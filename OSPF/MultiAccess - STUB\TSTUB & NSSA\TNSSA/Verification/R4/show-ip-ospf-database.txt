@@ -1,0 +1,98 @@
+R4#sh ip ospf database
+
+            OSPF Router with ID (4.4.4.4) (Process ID 1)
+
+                Router Link States (Area 0)
+
+Link ID         ADV Router      Age         Seq#       Checksum Link count
+4.4.4.4         4.4.4.4         1772        0x80000005 0x0053A7 1
+
+                Summary Net Link States (Area 0)
+
+Link ID         ADV Router      Age         Seq#       Checksum
+1.1.1.1         4.4.4.4         332         0x80000002 0x00F431
+2.2.2.2         4.4.4.4         85          0x80000002 0x00C65B
+3.3.3.3         4.4.4.4         332         0x80000002 0x009885
+7.7.7.7         4.4.4.4         1849        0x80000001 0x00EB22
+192.168.1.0     4.4.4.4         332         0x80000002 0x005C64
+192.168.2.0     4.4.4.4         332         0x80000002 0x00516E
+192.168.3.0     4.4.4.4         332         0x80000002 0x004678
+192.168.7.0     4.4.4.4         85          0x80000002 0x002495
+
+                Router Link States (Area 1)
+
+Link ID         ADV Router      Age         Seq#       Checksum Link count
+1.1.1.1         1.1.1.1         1631        0x8000000C 0x00370A 3
+4.4.4.4         4.4.4.4         1638        0x8000000A 0x00CA67 1
+7.7.7.7         7.7.7.7         1646        0x80000007 0x00984C 2
+
+                Net Link States (Area 1)
+
+Link ID         ADV Router      Age         Seq#       Checksum
+192.168.1.2     4.4.4.4         1639        0x80000001 0x002F7C
+192.168.7.2     7.7.7.7         1655        0x80000001 0x00F894
+
+                Summary Net Link States (Area 1)
+
+Link ID         ADV Router      Age         Seq#       Checksum
+0.0.0.0         4.4.4.4         1618        0x80000003 0x0035F6
+
+                Router Link States (Area 2)
+
+Link ID         ADV Router      Age         Seq#       Checksum Link count
+2.2.2.2         2.2.2.2         201         0x80000007 0x00FB26 2
+4.4.4.4         4.4.4.4         1772        0x80000008 0x005ACF 1
+
+                Net Link States (Area 2)
+
+Link ID         ADV Router      Age         Seq#       Checksum
+192.168.2.1     4.4.4.4         85          0x80000002 0x00E5B8
+
+                Summary Net Link States (Area 2)
+
+Link ID         ADV Router      Age         Seq#       Checksum
+1.1.1.1         4.4.4.4         85          0x80000002 0x009A85
+3.3.3.3         4.4.4.4         85          0x80000002 0x003ED9
+4.4.4.4         4.4.4.4         85          0x80000002 0x00060F
+7.7.7.7         4.4.4.4         1849        0x80000001 0x009176
+192.168.1.0     4.4.4.4         85          0x80000002 0x0002B8
+192.168.3.0     4.4.4.4         85          0x80000002 0x00EBCC
+192.168.7.0     4.4.4.4         85          0x80000002 0x00C9E9
+
+                Type-7 AS External Link States (Area 2)
+
+Link ID         ADV Router      Age         Seq#       Checksum Tag
+172.30.1.0      2.2.2.2         201         0x80000002 0x0045C0 0
+172.30.2.0      2.2.2.2         201         0x80000002 0x003ACA 0
+172.30.3.0      2.2.2.2         201         0x80000002 0x002FD4 0
+
+                Router Link States (Area 3)
+
+Link ID         ADV Router      Age         Seq#       Checksum Link count
+3.3.3.3         3.3.3.3         463         0x80000004 0x0070AD 2
+4.4.4.4         4.4.4.4         1772        0x80000007 0x00D657 1
+
+                Net Link States (Area 3)
+
+Link ID         ADV Router      Age         Seq#       Checksum
+192.168.3.2     3.3.3.3         463         0x80000002 0x008B17
+
+                Summary Net Link States (Area 3)
+
+Link ID         ADV Router      Age         Seq#       Checksum
+1.1.1.1         4.4.4.4         332         0x80000002 0x00F431
+2.2.2.2         4.4.4.4         85          0x80000002 0x00C65B
+4.4.4.4         4.4.4.4         332         0x80000002 0x0060BA
+7.7.7.7         4.4.4.4         1849        0x80000001 0x00EB22
+192.168.1.0     4.4.4.4         332         0x80000002 0x005C64
+192.168.2.0     4.4.4.4         332         0x80000002 0x00516E
+192.168.7.0     4.4.4.4         85          0x80000002 0x002495
+
+                Type-5 AS External Link States
+
+Link ID         ADV Router      Age         Seq#       Checksum Tag
+0.0.0.0         4.4.4.4         1728        0x80000005 0x000F7A 1
+172.30.1.0      4.4.4.4         85          0x80000002 0x009D6A 0
+172.30.2.0      4.4.4.4         85          0x80000002 0x009274 0
+172.30.3.0      4.4.4.4         85          0x80000002 0x00877E 0
+R4#

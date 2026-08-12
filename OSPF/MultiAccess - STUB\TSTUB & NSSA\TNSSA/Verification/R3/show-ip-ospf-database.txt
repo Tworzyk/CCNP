@@ -1,0 +1,33 @@
+R3#sh ip ospf  database
+
+            OSPF Router with ID (3.3.3.3) (Process ID 1)
+
+                Router Link States (Area 3)
+
+Link ID         ADV Router      Age         Seq#       Checksum Link count
+3.3.3.3         3.3.3.3         263         0x80000004 0x0070AD 2
+4.4.4.4         4.4.4.4         1568        0x80000007 0x00D657 1
+
+                Net Link States (Area 3)
+
+Link ID         ADV Router      Age         Seq#       Checksum
+192.168.3.2     3.3.3.3         263         0x80000002 0x008B17
+
+                Summary Net Link States (Area 3)
+
+Link ID         ADV Router      Age         Seq#       Checksum
+1.1.1.1         4.4.4.4         133         0x80000002 0x00F431
+2.2.2.2         4.4.4.4         1843        0x80000001 0x00C85A
+4.4.4.4         4.4.4.4         133         0x80000002 0x0060BA
+7.7.7.7         4.4.4.4         1644        0x80000001 0x00EB22
+192.168.1.0     4.4.4.4         133         0x80000002 0x005C64
+192.168.2.0     4.4.4.4         133         0x80000002 0x00516E
+192.168.7.0     4.4.4.4         1890        0x80000001 0x002694
+
+                Type-5 AS External Link States
+
+Link ID         ADV Router      Age         Seq#       Checksum Tag
+0.0.0.0         4.4.4.4         1524        0x80000005 0x000F7A 1
+172.30.1.0      4.4.4.4         1842        0x80000001 0x009F69 0
+172.30.2.0      4.4.4.4         1842        0x80000001 0x009473 0
+172.30.3.0      4.4.4.4         1842        0x80000001 0x00897D 0
