@@ -1,0 +1,12 @@
+R3#sh ip bgp
+BGP table version is 4, local router ID is 3.3.3.3
+Status codes: s suppressed, d damped, h history, * valid, > best, i - internal,
+              r RIB-failure, S Stale, m multipath, b backup-path, f RT-Filter,
+              x best-external, a additional-path, c RIB-compressed,
+              t secondary path,
+Origin codes: i - IGP, e - EGP, ? - incomplete
+RPKI validation codes: V valid, I invalid, N Not found
+
+     Network          Next Hop            Metric LocPrf Weight Path
+ *    10.10.10.0/24    172.16.3.1               0           100 65111 i
+ *>                    172.16.5.1               0           200 65222 i

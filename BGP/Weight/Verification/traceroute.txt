@@ -1,0 +1,6 @@
+R3#traceroute 10.10.10.10
+Type escape sequence to abort.
+Tracing the route to 10.10.10.10
+VRF info: (vrf in name/id, vrf out name/id)
+  1 172.16.5.1 11 msec 6 msec 4 msec
+R3#
