@@ -2,20 +2,45 @@
 
 ## Overview
 
-This lab demonstrates **route redistribution between OSPF and EIGRP** using Cisco IOS in GNS3.
+This lab demonstrates **route redistribution between OSPF and EIGRP** in a Cisco IOS network simulated in GNS3.
 
-The topology consists of two routing domains:
+The topology is divided into two routing domains:
 
-- **OSPF** – R1, R2, R3 and R4
-- **EIGRP** – R3, R5 and R6
+- **OSPF** – used in the upper part of the topology
+- **EIGRP** – used in the lower part of the topology
 
-R3 participates in both routing protocols and is responsible for redistributing routes between the OSPF and EIGRP domains.
+R3 participates in both OSPF and EIGRP and serves as the main point for exchanging routing information between the two routing domains.
 
-The topology includes redundant paths between the routers, allowing the behavior of dynamic routing protocols and route selection to be observed.
+The topology contains multiple paths between routers, which makes it possible to observe how OSPF and EIGRP calculate routes, how redistributed routes appear in the routing table, and how routing protocols select the best available path.
+
+---
 
 ## Topology
 
 ![OSPF + EIGRP topology](Topology/OSPF+EIGRP.png)
+
+The network consists of six routers and three end devices.
+
+### OSPF Domain
+
+The OSPF domain includes:
+
+- R1
+- R2
+- R3
+- R4
+
+### EIGRP Domain
+
+The EIGRP domain includes:
+
+- R3
+- R5
+- R6
+
+R3 participates in both routing protocols and is responsible for redistributing routes between OSPF and EIGRP.
+
+---
 
 ## Technologies
 
@@ -24,13 +49,20 @@ The topology includes redundant paths between the routers, allowing the behavior
 - EIGRP
 - Route Redistribution
 - IPv4
-- GNS3
+- Dynamic Routing
 - Loopback Interfaces
+- Routing Metrics
+- Administrative Distance
+- GNS3
+
+---
 
 ## Addressing
 
-| Router | Protocol | Loopback |
-|--------|----------|----------|
+### Router Loopbacks
+
+| Router | Routing Protocol | Loopback |
+|--------|------------------|----------|
 | R1 | OSPF | 1.1.1.1/32 |
 | R2 | OSPF | 2.2.2.2/32 |
 | R3 | OSPF / EIGRP | 3.3.3.3/32 |
@@ -38,11 +70,10 @@ The topology includes redundant paths between the routers, allowing the behavior
 | R5 | EIGRP | 5.5.5.5/32 |
 | R6 | EIGRP | 6.6.6.6/32 |
 
-### Network Links
+### Router-to-Router Networks
 
 | Connection | Network |
 |------------|---------|
-| PC2 – R1 | 172.0.1.0/24 |
 | R1 – R2 | 172.0.12.0/24 |
 | R1 – R3 | 172.0.13.0/24 |
 | R2 – R4 | 172.0.24.0/24 |
@@ -51,28 +82,30 @@ The topology includes redundant paths between the routers, allowing the behavior
 | R3 – R6 | 172.0.36.0/24 |
 | R4 – R6 | 172.0.46.0/24 |
 | R5 – R6 | 172.0.56.0/24 |
+
+### End-Device Networks
+
+| Connection | Network |
+|------------|---------|
+| PC2 – R1 | 172.0.1.0/24 |
 | R5 – PC1 | 10.0.5.0/24 |
 | R6 – PC3 | 192.168.6.0/24 |
+
+---
 
 ## OSPF
 
 OSPF is configured on R1, R2, R3 and R4.
 
-OSPF provides dynamic routing within the upper part of the topology. R3 participates in OSPF and EIGRP, allowing routing information to be exchanged between both routing domains.
+The OSPF domain provides dynamic routing between the routers located in the upper part of the topology.
 
-## EIGRP
+OSPF uses a **cost-based metric** to calculate the best path to a destination.
 
-EIGRP is configured on R3, R5 and R6.
-
-The EIGRP domain provides connectivity to the networks behind R5 and R6. EIGRP uses a composite metric based primarily on bandwidth and delay.
-
-## Route Redistribution
-
-R3 is configured as the redistribution point between OSPF and EIGRP.
-
-### OSPF → EIGRP
-
-Routes learned through OSPF are redistributed into EIGRP and appear as external EIGRP routes:
+The following networks are advertised within the OSPF domain:
 
 ```text
-D EX
+172.0.1.0/24
+172.0.12.0/24
+172.0.13.0/24
+172.0.24.0/24
+172.0.34.0/24
