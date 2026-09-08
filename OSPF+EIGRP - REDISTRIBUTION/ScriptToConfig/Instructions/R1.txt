@@ -1,0 +1,11 @@
+int gig 2/0
+ip addr 172.0.1.1 255.255.255.0
+no sh
+
+int gig 1/0
+ip addr 172.0.12.1 255.255.255.0
+no sh
+
+int gig 0/0
+ip addr 172.0.13.1 255.255.255.0
+no sh
