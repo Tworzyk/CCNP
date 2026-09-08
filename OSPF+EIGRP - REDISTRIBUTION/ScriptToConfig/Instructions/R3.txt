@@ -1,17 +1,32 @@
 int gig 0/0
-ip addr 172.0.13.3 255.255.255.0
+ip address 172.0.13.3 255.255.255.0
 no sh
 
 int fa 1/0
-ip addr 172.0.34.3 255.255.255.0
+ip address 172.0.34.3 255.255.255.0
 no sh
 
 int fa 1/1
-ip addr 172.0.35.3 255.255.255.0
+ip address 172.0.35.3 255.255.255.0
 no sh
 
-int s5/0
-ip addr 172.0.36.3 255.255.255.0
+int serial 5/0
+ip address 172.0.36.3 255.255.255.0
 no sh
 
 
+router ospf 1
+network 172.0.13.0 0.0.0.255 area 0
+network 172.0.34.0 0.0.0.255 area 0
+redistribute eigrp 1 tag 04 metric 10 metric-type 2 subnets
+auto-cost reference-bandwidth 1000
+
+
+router eigrp 1
+network 172.0.35.0 0.0.0.255
+network 172.0.36.0 0.0.0.255
+
+redistribute ospf 1 metric 100 10 1 1 1
+
+
+do write

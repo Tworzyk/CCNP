@@ -1,11 +1,22 @@
-int gig 2/0
-ip addr 10.0.5.1 255.255.255.0
+int gig 0/2
+ip address 10.0.5.1 255.255.255.0
 no sh
 
-int gig 1/0
-ip addr 172.0.35.5 255.255.255.0
+int gig 0/1
+ip address 172.0.35.5 255.255.255.0
 no sh
 
 int gig 0/0
-ip addr 172.0.56.5 255.255.255.0
+ip address 172.0.56.5 255.255.255.0
 no sh
+
+
+router eigrp 1
+
+network 172.0.35.0 0.0.0.255
+network 172.0.56.0 0.0.0.255
+network 10.0.5.1 0.0.0.255
+
+passive-interface gig 0/2
+
+do write

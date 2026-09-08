@@ -3,30 +3,36 @@
     "device_type": "cisco_ios",
     "username" : "kacper",
     "password" : "zaq1@WSX",
-    "host": "192.168.1.1"
+    "host": "192.168.1.23"
   },
   {
     "device_type": "cisco_ios",
     "username" : "kacper",
     "password" : "zaq1@WSX",
-    "host": "192.168.1.2"
+    "host": "192.168.1.24"
   },
   {
     "device_type": "cisco_ios",
     "username" : "kacper",
     "password" : "zaq1@WSX",
-    "host": "192.168.1.3"
+    "host": "192.168.1.25"
   },
   {
     "device_type": "cisco_ios",
     "username" : "kacper",
     "password" : "zaq1@WSX",
-    "host": "192.168.1.4"
+    "host": "192.168.1.28"
   },
   {
     "device_type": "cisco_ios",
     "username" : "kacper",
     "password" : "zaq1@WSX",
-    "host": "192.168.1.4"
+    "host": "192.168.1.30"
+  },
+  {
+    "device_type": "cisco_ios",
+    "username" : "kacper",
+    "password" : "zaq1@WSX",
+    "host": "192.168.1.31"
   }
 ]

@@ -21,11 +21,13 @@ def execute_connection(device : dict) -> BaseConnection:
     return connection
 
 def execute_commands(connection: BaseConnection, commands: list) :
-    for command in commands:
-        output = connection.send_command(command)
+        output = connection.send_config_set(commands)
         print(output)
 
 
-for i in range(0,5):
-        device = load_devices_from_json("devices.json")
-    execute_commands(execute_connection(device[i]),load_configs(f"./Instructions/R{i}.txt"))
+for i in range(0,6):
+    device = load_devices_from_json("devices.json")
+    execute_commands(execute_connection(device[i]),load_configs(f"./Instructions/R{i+1}.txt"))
+
+
+
