@@ -1,0 +1,6 @@
+R2#sh ip int brief
+Interface                  IP-Address      OK? Method Status                Protocol
+GigabitEthernet0/0         172.0.12.2      YES NVRAM  up                    up
+GigabitEthernet0/1         172.0.24.2      YES NVRAM  up                    up
+GigabitEthernet0/2         192.168.1.24    YES DHCP   up                    up
+GigabitEthernet0/3         unassigned      YES NVRAM  administratively down down
