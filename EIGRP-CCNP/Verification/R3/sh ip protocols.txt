@@ -1,0 +1,56 @@
+R3#sh ip protocols
+Routing Protocol is "eigrp 1"
+  Outgoing update filter list for all interfaces is not set
+  Incoming update filter list for all interfaces is not set
+  Default networks flagged in outgoing updates
+  Default networks accepted from incoming updates
+  EIGRP metric weight K1=1, K2=0, K3=1, K4=0, K5=0
+  EIGRP maximum hopcount 100
+  EIGRP maximum metric variance 1
+  Redistributing: eigrp 1
+  EIGRP NSF-aware route hold timer is 240s
+  Automatic network summarization is in effect
+  Maximum path: 4
+  Routing for Networks:
+    172.16.3.3/32
+    172.16.23.3/32
+    172.16.35.3/32
+  Routing Information Sources:
+    Gateway         Distance      Last Update
+    172.16.35.5           90      00:02:10
+    172.16.23.2           90      00:02:10
+  Distance: internal 90 external 170
+
+R3#sh ip ei
+R3#sh ip eigrp data
+R3#sh ip eigrp topo
+R3#sh ip eigrp topology
+IP-EIGRP Topology Table for AS(1)/ID(3.3.3.3)
+
+Codes: P - Passive, A - Active, U - Update, Q - Query, R - Reply,
+       r - reply Status, s - sia Status
+
+P 6.0.0.0/8, 1 successors, FD is 156928
+        via 172.16.23.2 (156928/156672), GigabitEthernet0/0
+        via 172.16.35.5 (158976/156416), FastEthernet4/0
+P 172.16.45.0/24, 1 successors, FD is 30720
+        via 172.16.35.5 (30720/28160), FastEthernet4/0
+P 172.16.46.0/24, 1 successors, FD is 28928
+        via 172.16.23.2 (28928/28672), GigabitEthernet0/0
+        via 172.16.35.5 (30976/28416), FastEthernet4/0
+P 172.16.35.0/24, 1 successors, FD is 28160
+        via Connected, FastEthernet4/0
+P 172.16.23.0/24, 1 successors, FD is 2816
+        via Connected, GigabitEthernet0/0
+P 172.16.12.0/24, 1 successors, FD is 3072
+        via 172.16.23.2 (3072/2816), GigabitEthernet0/0
+P 172.16.14.0/24, 1 successors, FD is 28672
+        via 172.16.23.2 (28672/28416), GigabitEthernet0/0
+P 172.16.1.0/24, 1 successors, FD is 3328
+        via 172.16.23.2 (3328/3072), GigabitEthernet0/0
+
+Codes: P - Passive, A - Active, U - Update, Q - Query, R - Reply,
+       r - reply Status, s - sia Status
+
+P 172.16.3.0/24, 1 successors, FD is 2816
+        via Connected, GigabitEthernet1/0
